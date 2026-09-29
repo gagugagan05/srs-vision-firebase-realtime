@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SRS Vision — Creative Studio Platform</title>
+<meta name="description" content="SRS Vision main dashboard with separate tool workspaces, project assignment, reports, team, music and banking."
+><link rel="icon" href="srs-vision-logo.png"><link id="srs-logo-preload" rel="preload" as="image" href="srs-vision-logo.png"><link rel="stylesheet" href="styles.css?v=20260929-v5">
+</head><body><div id="app"></div><div id="toast" class="toast" aria-live="polite"></div>
+<script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-database-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script>
+window.__SRS_BUILD__='Firebase-CLEAN-v5-Interactive';
+window.addEventListener('error',function(e){
+  var c=document.getElementById('content');
+  if(c && !c.dataset.errorShown){
+    c.dataset.errorShown='1';
+    c.innerHTML='<div style="margin:30px;padding:20px;border:1px solid #7b3040;border-radius:14px;background:#160b12;color:#fff;font-family:Arial"><h2 style="margin-top:0">SRS Vision startup error</h2><p>The page loaded the clean Firebase build, but a script error occurred.</p><p style="color:#ff9aaa">'+String(e.message||'Unknown error').replace(/[&<>]/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[ch]})+'</p><button onclick="location.reload()" style="padding:10px 14px;border:0;border-radius:9px;background:#2b8cff;color:#fff;cursor:pointer">Reload</button></div>';
+  }
+});
+</script>
+<script src="app.js?v=20260929-v5"></script></body></html>
