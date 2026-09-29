@@ -1,0 +1,3 @@
+-- Legacy compatibility placeholder.
+-- SRS Vision v6 uses Firebase Realtime Database, not Supabase/Postgres.
+-- Do not run this file in Supabase.

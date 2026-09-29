@@ -72,3 +72,30 @@
   .heroOverlay p{font-size:11px}
   .graphBox{min-height:230px}
 }
+
+/* SRS Vision v5 interaction fixes — every dashboard card/control is an obvious tap target */
+.dashboardCardBtn,
+.dashboardLinkBtn,
+.dashboardPanelClickable,
+.dashboardClickable{cursor:pointer;-webkit-tap-highlight-color:rgba(24,215,255,.15);touch-action:manipulation}
+button.dashboardCardBtn{font:inherit;text-align:left;color:inherit;width:100%}
+.dashboardCardBtn{border:0}
+.dashboardCardBtn:hover,.dashboardCardBtn:focus-visible,.dashboardClickable:hover,.dashboardClickable:focus-visible,.dashboardPanelClickable:hover,.dashboardPanelClickable:focus-visible{border-color:#37baff;box-shadow:0 0 0 2px rgba(24,215,255,.10),var(--shadow);outline:none;transform:translateY(-1px)}
+.dashboardLinkBtn{width:100%;font:inherit;text-align:left;color:inherit;background:transparent;border:0;border-bottom:1px solid rgba(45,89,128,.2)}
+.dashboardLinkBtn:last-child{border-bottom:0}
+.projectEditQuick{min-width:44px;min-height:36px;justify-content:center;touch-action:manipulation}
+.dashboardClickable{position:relative}
+.dashboardClickable .projectEditQuick{position:relative;z-index:3}
+.dashboardPanelClickable .panelHead button{position:relative;z-index:3}
+.teamCard.dashboardCardBtn{background:#0a2442}
+.memberActions .btn,.teamCustomAction{min-height:40px;touch-action:manipulation;position:relative;z-index:5;pointer-events:auto}
+@media(max-width:900px){.dashboardCardBtn,.dashboardClickable,.dashboardPanelClickable{min-height:72px}.dashboardLinkBtn{min-height:52px;padding:10px 0}.projectEditQuick{min-height:40px}.memberActions .btn{min-height:42px}}
+
+
+/* SRS Vision v5 — immediate tap/edit/customise interactions */
+.dashboardClickable,.dashboardCardBtn,.dashboardPanelClickable,.dashboardLinkBtn{cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:rgba(24,215,255,.18)}
+.teamCard.dashboardCardBtn{display:block;width:100%;border:1px solid #1b4d7c;color:inherit;text-align:left;font:inherit}
+.teamQuickActions{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
+.quickChip{display:inline-flex;align-items:center;padding:5px 8px;border-radius:999px;background:#0b3154;border:1px solid #235b89;color:#d8efff;font-size:9px;font-weight:800}
+.workCardClickable:hover,.workCardClickable:focus-visible{outline:none;border-color:#37baff;box-shadow:0 0 0 2px rgba(24,215,255,.1)}
+.memberActions .btn,.teamQuickActions .quickChip{user-select:none}

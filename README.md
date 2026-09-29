@@ -1,34 +1,52 @@
-# SRS Vision — Firebase Realtime Production v3
+# SRS Vision — Firebase Realtime v6 Mix-Safe
 
-SRS Vision keeps the **first dashboard as the main dashboard** and opens specialist tools in separate dashboards.
+This package is a root-level replacement for older SRS Vision / 3FS builds.
 
-## v3 fixes
-- Assignment-created **Save** button now closes the confirmation safely and confirms that the assignment is already saved.
-- Reports page is resilient to malformed/missing remote state and renders its KPI/graph panels instead of going blank.
-- Main Dashboard is resilient to incomplete Firebase state and preserves safe defaults.
-- Main Dashboard greeting automatically switches between **Good Morning / Good Afternoon / Good Evening / Good Night** based on the browser's local time.
-- Sidebar now has its own vertical scroll, so the last tool/management items no longer overlap the Live Database item.
-- Hero greeting/banner has stronger contrast and a reliable minimum height.
-- Rendering errors are caught and shown as a recovery panel instead of leaving a blank page.
+## Important for mixed repositories
+You may have old files in your GitHub repository. Upload this package's files to the repository **root** and choose **Replace** for files with the same names.
 
-## Realtime architecture
-- Firebase Authentication with Anonymous sign-in
-- Firebase Realtime Database at `/srsVision`
-- Local-first autosave for immediate responsiveness
-- Firebase cloud sync for shared data
-- Realtime Database listeners for live updates
-- Large local audio blobs stay local instead of being uploaded to RTDB
-- Project/team/task/notification/account data is separated by top-level sections so the app can update only the changed section
+The active application is:
+- `index.html`
+- `app.js`
+- `styles.css`
+- `firebase-config.js`
+- `database.rules.json`
+- `assets/`
 
-## Team
-All 13 SRS Vision members belong to one team. Team contacts, projects, assignments and work queue are editable.
+This build also includes compatibility files named `auth.js`, `live-db.js`, `supabase-config.js`, `database.sql`, and `portal.html` so old filenames do not need to be hunted down individually. The active `index.html` does not use Supabase.
 
-## Firebase setup
-See `FIREBASE_SETUP.md` and `REALTIME_SETUP_REQUIRED.md`.
+## v6 interaction fixes
+- Assignment confirmation Save/Done action closes reliably.
+- Team member Edit and Customise actions use direct delegated click handlers.
+- Project Edit/Assign/Share/Continue actions are direct targets.
+- Dashboard cards and Recent Activity entries can be opened directly.
+- Reports render from normalized state and have a safe fallback.
+- Sidebar has independent vertical scrolling.
+- Main Dashboard greeting updates automatically by local time.
+- Firebase realtime state uses sectioned data and local-first persistence.
+
+## Firebase
+Realtime Database URL is already configured in `firebase-config.js`.
+Anonymous Authentication is expected to be enabled in the Firebase project.
 
 ## GitHub
-Recommended repository name: `srs-vision-firebase-realtime`
+Repository name: `srs-vision-firebase-realtime`
 
+### Root layout
+```text
+index.html
+app.js
+styles.css
+firebase-config.js
+database.rules.json
+auth.js
+live-db.js
+supabase-config.js
+database.sql
+portal.html
+srs-vision-logo.png
+srs-vision-logo-transparent.png
+assets/
+```
 
-## Clean deployment rule
-Do not mix files from older SRS Vision/3FS/Supabase builds. Upload this build as the complete repository root and remove old root files first. The required root file is index.html.
+Do not place these files inside an extra folder such as `SRS-Vision-Firebase-CLEAN-v6/`.
