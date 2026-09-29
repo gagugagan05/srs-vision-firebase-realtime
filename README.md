@@ -1,40 +1,30 @@
-# SRS Vision — Firebase Realtime
+# SRS Vision — Firebase Realtime Production v3
 
-This repository is the clean Firebase version of SRS Vision. Do not mix it with the old 3FS/Supabase build.
+SRS Vision keeps the **first dashboard as the main dashboard** and opens specialist tools in separate dashboards.
 
-## Repository
+## v3 fixes
+- Assignment-created **Save** button now closes the confirmation safely and confirms that the assignment is already saved.
+- Reports page is resilient to malformed/missing remote state and renders its KPI/graph panels instead of going blank.
+- Main Dashboard is resilient to incomplete Firebase state and preserves safe defaults.
+- Main Dashboard greeting automatically switches between **Good Morning / Good Afternoon / Good Evening / Good Night** based on the browser's local time.
+- Sidebar now has its own vertical scroll, so the last tool/management items no longer overlap the Live Database item.
+- Hero greeting/banner has stronger contrast and a reliable minimum height.
+- Rendering errors are caught and shown as a recovery panel instead of leaving a blank page.
 
-Recommended GitHub repository name:
+## Realtime architecture
+- Firebase Authentication with Anonymous sign-in
+- Firebase Realtime Database at `/srsVision`
+- Local-first autosave for immediate responsiveness
+- Firebase cloud sync for shared data
+- Realtime Database listeners for live updates
+- Large local audio blobs stay local instead of being uploaded to RTDB
+- Project/team/task/notification/account data is separated by top-level sections so the app can update only the changed section
 
-`srs-vision-firebase-realtime`
+## Team
+All 13 SRS Vision members belong to one team. Team contacts, projects, assignments and work queue are editable.
 
-## Main features
+## Firebase setup
+See `FIREBASE_SETUP.md` and `REALTIME_SETUP_REQUIRED.md`.
 
-- SRS Vision first dashboard as the main dashboard
-- Separate dashboards for tools
-- Projects, team, work queue, notifications, calendar, reports, accounts and banking
-- 13 SRS Vision members in one team
-- Manual member email / WhatsApp fields
-- Project assignment creates saved work + notification
-- Local-first autosave
-- Firebase Anonymous Authentication
-- Firebase Realtime Database sync
-- Realtime listeners for shared changes
-- Large local music audio blobs are not uploaded to Realtime Database
-
-## Firebase project already configured
-
-Project ID: `srs-vision`
-
-Realtime Database URL:
-`https://srs-vision-default-rtdb.asia-southeast1.firebasedatabase.app`
-
-Authentication: Anonymous enabled
-
-## Important
-
-The included development database rules allow any authenticated Firebase user to read/write. Before exposing the app publicly, replace them with restrictive rules for the intended SRS Vision users.
-
-## GitHub Pages
-
-Upload the contents of this folder to the repository root. Then enable GitHub Pages from Settings → Pages → Deploy from branch → main → root.
+## GitHub
+Recommended repository name: `srs-vision-firebase-realtime`

@@ -1,9 +1,14 @@
-# GitHub upload — SRS Vision Firebase
+# GitHub Upload — SRS Vision Firebase Realtime
 
-1. Create a new GitHub repository named `srs-vision-firebase-realtime`.
-2. Keep the repository empty when creating it (do not add a second README if you plan to upload all files together).
-3. Upload every file and the `assets` folder from this directory to the repository root.
-4. Confirm that `index.html`, `app.js`, `styles.css`, `firebase-config.js`, `database.rules.json` and `assets/` are directly in the repository root.
-5. Enable GitHub Pages in Settings → Pages.
+Recommended repository name:
 
-Do not upload the old Supabase files such as `supabase-config.js`, `live-db.js` or old database SQL files into the root of this repository.
+`srs-vision-firebase-realtime`
+
+1. Create a **new empty repository** with the name above.
+2. Extract this ZIP.
+3. Upload the **contents of `srs-vision-command-center`** to the repository root.
+4. Keep the Firebase files in the root; do not mix them with older 3FS/Supabase builds.
+5. Enable GitHub Pages from **Settings → Pages** and deploy from the `main` branch / root.
+6. Open the Pages URL and test Dashboard → Projects → Assign → Save, Reports, sidebar scrolling, and Firebase status.
+
+Do not add old `supabase-config.js`, `live-db.js`, or old 3FS files to the active root.

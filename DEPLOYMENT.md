@@ -10,7 +10,10 @@ Required files:
 - `database.rules.json`
 - `srs-vision-logo.png`
 - `srs-vision-logo-transparent.png`
+- `assets/`
 
-Enable GitHub Pages from Settings → Pages.
+Recommended repository name: `srs-vision-firebase-realtime`
+
+Enable GitHub Pages from **Settings → Pages**.
 
 Before public production, tighten Firebase Realtime Database rules so only intended SRS Vision users can read/write shared data.

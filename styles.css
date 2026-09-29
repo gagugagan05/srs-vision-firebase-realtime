@@ -26,3 +26,49 @@
 
 /* Removed legacy quote content */
 .sideQuote,.quoteCard,.heroQuote,[data-quote]{display:none!important}
+
+/* SRS Vision UI fixes v3 */
+.sidebar{
+  height:100vh;
+  max-height:100vh;
+  overflow-y:auto;
+  overflow-x:hidden;
+  align-self:start;
+  scrollbar-gutter:stable;
+  padding-bottom:18px;
+}
+.sidebar::-webkit-scrollbar{width:7px}
+.sidebar::-webkit-scrollbar-track{background:transparent}
+.sidebar::-webkit-scrollbar-thumb{background:#1d4e7e;border-radius:999px}
+.sideBottom{
+  position:static;
+  left:auto;
+  right:auto;
+  bottom:auto;
+  margin:14px 0 2px;
+  padding-top:12px;
+  border-top:1px solid rgba(55,110,164,.22);
+}
+.mainwrap{min-height:100vh;min-width:0}
+.content{min-height:calc(100vh - 70px)}
+.heroImage{min-height:178px;height:178px;background-color:#081a30;background-position:center;background-size:cover}
+.heroImage:after{background:linear-gradient(90deg,rgba(2,9,20,.78) 0%,rgba(2,9,20,.48) 48%,rgba(2,9,20,.32) 100%)}
+.heroOverlay{height:100%;display:flex;flex-direction:column;justify-content:center}
+.heroOverlay h2{font-size:32px;text-shadow:0 2px 16px rgba(0,0,0,.42)}
+.heroOverlay h2 span:last-child{color:#18d7ff}
+.pageHead{min-height:58px}
+.graphBox{min-height:260px}
+.barChart{min-height:210px}
+@media(max-width:900px){
+  .sidebar{display:none}
+  .content{min-height:calc(100vh - 70px);padding-bottom:88px}
+  .heroImage{min-height:170px;height:170px}
+  .heroOverlay h2{font-size:25px}
+}
+@media(max-width:560px){
+  .heroImage{min-height:150px;height:150px}
+  .heroOverlay{padding:15px}
+  .heroOverlay h2{font-size:22px}
+  .heroOverlay p{font-size:11px}
+  .graphBox{min-height:230px}
+}
